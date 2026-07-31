@@ -40,7 +40,8 @@ function Index() {
       setDay(null);
       return;
     }
-    setDay(DAYS[parsed.getDay()]);
+    const dayName = DAYS[parsed.getDay()];
+    setDay(dayName ?? null);
   };
 
   return (
