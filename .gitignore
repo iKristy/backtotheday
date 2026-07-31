@@ -11,10 +11,14 @@ node_modules
 dist
 dist-ssr
 .output
+.netlify
 .vinxi
 .tanstack/**
 .nitro
 *.local
+
+# npm lockfile (this project uses bun.lock)
+package-lock.json
 
 # Wrangler / Cloudflare
 .wrangler/
