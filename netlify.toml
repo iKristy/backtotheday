@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  # Nitro's `netlify` preset emits static assets here and the SSR handler to
+  # `.netlify/functions-internal`, which Netlify picks up automatically.
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
