@@ -336,11 +336,6 @@
   }
 }
 
-/* Touch devices (iOS/Android): swap to a GPU-composited opacity pulse.
-   The base shows the dim state with static bezel rings; a ::after pseudo
-   renders the bright glow and animates only opacity — no gradient/shadow
-   repaints per frame, fixing jank on mobile Safari. */
-
 @media (hover: none) {
   .tc-led-amber.tc-led-pulse,
   .tc-led-green.tc-led-pulse {
@@ -485,7 +480,7 @@
   box-shadow: 0 1px 1px rgb(0 0 0 / 55%);
 }
 
-/* Black pill row label (INPUT DAY / DESTINATION DAY / PRESENT DAY). */
+/* Black pill row label (INPUT DATE / DESTINATION DAY / PRESENT DAY). */
 .tc-rowlabel {
   font-family: "impact_labelregular", "Arial Narrow", sans-serif;
   background: var(--tc-label-bg);
@@ -502,7 +497,6 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-align: center;
-  /* Subtle metal ink wash — same weight as text-neutral-700. */
   background-image: linear-gradient(
     180deg,
     rgb(90 90 90) 0%,
@@ -512,7 +506,6 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  /* Recessed like .tc-window (drop-shadow so it works with clipped text). */
   filter:
     drop-shadow(0 -1px 0 rgb(0 0 0 / 80%))
     drop-shadow(0 1px 0 rgb(255 255 255 / 20%));
@@ -530,10 +523,8 @@
   font-family: "lcd", "Courier New", monospace;
   font-weight: normal;
   font-style: normal;
-  /* Match LcdCells gap-[0.06em] so scroll/caret track the cell grid. */
   letter-spacing: 0.06em;
   caret-color: var(--lcd-red);
-  /* Match .lcd optical centering so the caret tracks the cell row. */
   transform: translateY(0.1em);
 }
 
@@ -553,7 +544,6 @@
     -1px 0 0 rgb(0 0 0 / 20%);
 }
 
-/* Raised key face — openai.fm-inspired soft shadow style. */
 button.tc-input-btn {
   color: var(--tc-key-ink);
   width: 52px;
@@ -600,7 +590,6 @@ button.tc-input-btn[data-state="open"] {
   }
 }
 
-/* Date picker popover — same warm key plastic as the calendar trigger. */
 .tc-datepicker {
   /* Utilities reference --background / --accent etc. (not --color-*). */
   --background: var(--tc-key-face);
@@ -627,7 +616,6 @@ button.tc-input-btn[data-state="open"] {
     0 8px 20px rgb(0 0 0 / 35%);
 }
 
-/* Toggletip — click/tap-triggered inline info bubble (inclusive pattern). */
 .toggletip-container {
   position: relative;
 }
@@ -697,7 +685,6 @@ button.tc-input-btn[data-state="open"] {
   animation: led-power-on 450ms 200ms ease-out both;
 }
 
-/* Hint text below the input. */
 .lcd-placeholder-pulse .lcd-value {
   animation: lcd-placeholder-pulse 2.4s 650ms ease-in-out infinite;
 }

@@ -218,7 +218,7 @@ function LcdBox({
   );
 }
 
-/** Stable minimum ghost-cell count for the time-entry window. */
+/** Stable minimum ghost-cell count for the day-entry window. */
 const INPUT_MIN_CELLS = PLACEHOLDER_VALUE.length;
 
 function CircuitRow({
@@ -324,9 +324,9 @@ function Index() {
 
         <div className="tc-separator" />
 
-        <CircuitRow label="Input Day">
+        <CircuitRow label="Input Date">
           <div className="flex w-full flex-col items-center gap-1.5">
-            <span className="tc-caption text-base leading-none sm:text-lg">Time Entry</span>
+            <span className="tc-caption text-base leading-none sm:text-lg">Day Entry</span>
             <div className="tc-window relative flex h-16 w-full items-stretch overflow-hidden rounded-xs sm:h-20">
               <div ref={inputWindowRef} className="relative min-w-0 flex-1">
                 <div
