@@ -295,7 +295,7 @@ function Index() {
   const lcdInputValue = (value || PLACEHOLDER_VALUE).toUpperCase();
 
   return (
-    <main className="tc-panel flex min-h-screen flex-col justify-center py-3 sm:py-5">
+    <main className="tc-panel flex min-h-screen flex-col py-3 sm:justify-center sm:py-5">
         <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-2 px-3 pb-8 pt-5 sm:px-5 sm:pb-10">
           <h1 className="tc-logo">Back to the Day</h1>
           <p className="max-w-xs text-center text-sm text-neutral-700 sm:max-w-sm">
