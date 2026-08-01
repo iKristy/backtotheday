@@ -330,6 +330,7 @@ function Index() {
                       fillCells={Math.max(inputFillCells, lcdInputValue.length)}
                       align="left"
                       loadAnimation
+                      className={!value ? "lcd-placeholder-pulse" : undefined}
                     />
                   </div>
                 </div>
