@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { format } from "date-fns";
 import * as chrono from "chrono-node";
 import { CalendarBlank } from "@phosphor-icons/react";
@@ -252,6 +252,16 @@ function Index() {
     INPUT_MIN_CELLS,
     true,
   );
+
+  useEffect(() => {
+    const input = inputRef.current;
+    if (!input) return;
+    input.focus({ preventScroll: true });
+    input.scrollTop = 0;
+    if (overlayRef.current) overlayRef.current.scrollTop = 0;
+    const win = input.closest<HTMLElement>(".tc-window");
+    if (win) win.scrollTop = 0;
+  }, []);
 
   /** Pan the LCD row (and the transparent input) so the caret stays in view. */
   const syncOverlayScroll = () => {
