@@ -424,7 +424,7 @@ function Index() {
 
         <div className="tc-separator" />
 
-        <CircuitRow label="Present Time">
+        <CircuitRow label="Present Day">
           <LcdBox
             caption="Month"
             value={present.month}

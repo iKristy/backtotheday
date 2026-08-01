@@ -206,7 +206,6 @@
     0 0 26px rgb(230 190 0 / 45%);
 }
 
-/* Indicator LEDs (Present Time, beside year) — dome lamp in a metal bezel. */
 .tc-led {
   display: block;
   width: 14px;
@@ -383,7 +382,7 @@
   box-shadow: 0 1px 1px rgb(0 0 0 / 55%);
 }
 
-/* Black pill row label (INPUT DAY / DESTINATION DAY / PRESENT TIME). */
+/* Black pill row label (INPUT DAY / DESTINATION DAY / PRESENT DAY). */
 .tc-rowlabel {
   font-family: "impact_labelregular", "Arial Narrow", sans-serif;
   background: var(--tc-label-bg);
