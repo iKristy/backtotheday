@@ -260,6 +260,8 @@
     0 1px 2px rgb(0 0 0 / 40%);
 }
 
+/* Desktop: animate the full gradient + box-shadow for maximum fidelity. */
+
 .tc-led-amber.tc-led-pulse {
   animation: tc-led-pulse-amber 2.8s ease-in-out infinite;
 }
@@ -331,6 +333,89 @@
       0 0 3px rgb(40 224 60 / 25%),
       0 0 6px rgb(20 200 40 / 12%),
       0 1px 2px rgb(0 0 0 / 50%);
+  }
+}
+
+/* Touch devices (iOS/Android): swap to a GPU-composited opacity pulse.
+   The base shows the dim state with static bezel rings; a ::after pseudo
+   renders the bright glow and animates only opacity — no gradient/shadow
+   repaints per frame, fixing jank on mobile Safari. */
+
+@media (hover: none) {
+  .tc-led-amber.tc-led-pulse,
+  .tc-led-green.tc-led-pulse {
+    animation: none;
+    position: relative;
+  }
+
+  .tc-led-amber.tc-led-pulse {
+    background:
+      radial-gradient(circle at 32% 28%, rgb(255 255 255 / 22%) 0%, transparent 40%),
+      radial-gradient(circle at 50% 60%, #5a4e18 0%, #3a320e 50%, #161208 100%);
+    box-shadow:
+      inset 0 1px 1px rgb(255 255 255 / 15%),
+      inset 0 -2px 3px rgb(0 0 0 / 70%),
+      0 0 0 1.5px #4a4e54,
+      0 0 0 2.5px #3a3f46,
+      0 1px 0 2.5px rgb(255 255 255 / 20%),
+      0 0 3px rgb(255 220 40 / 25%),
+      0 0 6px rgb(230 190 0 / 12%),
+      0 1px 2px rgb(0 0 0 / 50%);
+  }
+
+  .tc-led-green.tc-led-pulse {
+    background:
+      radial-gradient(circle at 32% 28%, rgb(255 255 255 / 22%) 0%, transparent 40%),
+      radial-gradient(circle at 50% 60%, #1a4a24 0%, #0e3218 50%, #061208 100%);
+    box-shadow:
+      inset 0 1px 1px rgb(255 255 255 / 15%),
+      inset 0 -2px 3px rgb(0 0 0 / 70%),
+      0 0 0 1.5px #4a4e54,
+      0 0 0 2.5px #3a3f46,
+      0 1px 0 2.5px rgb(255 255 255 / 20%),
+      0 0 3px rgb(40 224 60 / 25%),
+      0 0 6px rgb(20 200 40 / 12%),
+      0 1px 2px rgb(0 0 0 / 50%);
+  }
+
+  .tc-led-amber.tc-led-pulse::after,
+  .tc-led-green.tc-led-pulse::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    will-change: opacity;
+    animation: tc-led-glow 2.8s linear infinite;
+  }
+
+  .tc-led-amber.tc-led-pulse::after {
+    background:
+      radial-gradient(circle at 32% 28%, rgb(255 255 255 / 90%) 0%, transparent 38%),
+      radial-gradient(circle at 50% 60%, #fff8b0 0%, var(--lcd-amber) 42%, #b89400 100%);
+    box-shadow:
+      inset 0 1px 1px rgb(255 255 255 / 75%),
+      inset 0 -2px 3px rgb(120 90 0 / 40%),
+      0 0 6px rgb(255 212 0 / 100%),
+      0 0 14px rgb(255 220 40 / 80%),
+      0 0 28px rgb(230 190 0 / 50%);
+  }
+
+  .tc-led-green.tc-led-pulse::after {
+    background:
+      radial-gradient(circle at 32% 28%, rgb(255 255 255 / 90%) 0%, transparent 38%),
+      radial-gradient(circle at 50% 60%, #c8ffd0 0%, var(--lcd-green) 42%, #0a8f28 100%);
+    box-shadow:
+      inset 0 1px 1px rgb(255 255 255 / 75%),
+      inset 0 -2px 3px rgb(0 80 20 / 40%),
+      0 0 6px rgb(57 255 90 / 100%),
+      0 0 14px rgb(40 224 60 / 80%),
+      0 0 28px rgb(20 200 40 / 50%);
+  }
+
+  @keyframes tc-led-glow {
+    0%, 38% { opacity: 1; }
+    43%, 57% { opacity: 0; }
+    62%, 100% { opacity: 1; }
   }
 }
 
