@@ -101,7 +101,7 @@
 
   body {
     /* Match the time-circuit metal mid-tone so overscroll never flashes white. */
-    background-color: #6d7278;
+    background-color: #797e84;
     color: var(--color-foreground);
   }
 }
@@ -118,10 +118,10 @@
   --lcd-amber: #ffd400;
 
   /* Brushed-metal chassis gradient stops. */
-  --tc-metal-top: #8a8f96;
-  --tc-metal-upper: #6d7278;
-  --tc-metal-lower: #565b61;
-  --tc-metal-bottom: #7c8188;
+  --tc-metal-top: #969ba2;
+  --tc-metal-upper: #797e84;
+  --tc-metal-lower: #62676d;
+  --tc-metal-bottom: #888d94;
 
   /* Recessed display window. */
   --tc-window-center: #1a1a1a;

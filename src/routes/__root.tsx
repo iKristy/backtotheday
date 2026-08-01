@@ -92,8 +92,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
+        rel: "preload",
+        href: "/fonts/Impact_Label-webfont.woff",
+        as: "font",
+        type: "font/woff",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: "/fonts/LCDM2N__.woff",
+        as: "font",
+        type: "font/woff",
+        crossOrigin: "anonymous",
+      },
+      {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=LINE+Seed+JP:wght@400;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap",
       },
       {
         rel: "stylesheet",
