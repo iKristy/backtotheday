@@ -18,13 +18,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Type any date in plain English and instantly find out what day of the week it was.",
+          "What day was it? Pick any date to find out. No plutonium required.",
       },
       { property: "og:title", content: "Back to the Day" },
       {
         property: "og:description",
         content:
-          "Type any date in plain English and instantly find out what day of the week it was.",
+          "What day was it? Pick any date to find out. No plutonium required.",
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/og-image.png" },
