@@ -201,7 +201,7 @@ function LcdBox({
       <div
         ref={autoFill ? windowRef : undefined}
         className={cn(
-          "tc-window relative flex h-16 w-full items-center overflow-hidden rounded-xs px-2 sm:h-20",
+          "tc-window relative flex h-16 w-full items-center overflow-hidden rounded-xs px-3.5 sm:h-20",
           align === "left" ? "justify-start" : "justify-center",
           windowClassName,
         )}
@@ -331,7 +331,7 @@ function Index() {
               <div ref={inputWindowRef} className="relative min-w-0 flex-1">
                 <div
                   ref={overlayRef}
-                  className="pointer-events-none absolute inset-0 overflow-x-hidden overflow-y-hidden py-0 pl-3.5 pr-2"
+                  className="pointer-events-none absolute inset-0 overflow-x-hidden overflow-y-hidden py-0 px-3.5"
                 >
                   <div className="flex h-full w-max min-w-full items-center">
                     <LcdCells
@@ -349,7 +349,7 @@ function Index() {
                   id="date"
                   value={value}
                   placeholder={PLACEHOLDER_VALUE}
-                  className="tc-input relative z-10 h-full w-full rounded-none border-0 bg-transparent py-0 pl-3.5 pr-2 text-4xl leading-none normal-case text-transparent sm:text-6xl focus-visible:ring-0 focus-visible:ring-offset-0"
+                  className="tc-input relative z-10 h-full w-full rounded-none border-0 bg-transparent py-0 px-3.5 text-4xl leading-none normal-case text-transparent sm:text-6xl focus-visible:ring-0 focus-visible:ring-offset-0"
                   onChange={(e) => {
                     const next = e.target.value;
                     setValue(next);
@@ -441,7 +441,6 @@ function Index() {
             value={present.month}
             tone="amber"
             className="flex-[3] basis-0"
-            windowClassName="px-3.5"
             loadAnimation
           />
           <LcdBox caption="Day" value={present.day} tone="amber" className="flex-[2] basis-0" loadAnimation />
@@ -451,7 +450,6 @@ function Index() {
               value={present.year}
               tone="amber"
               className="min-w-0 flex-1"
-              windowClassName="px-3.5"
               loadAnimation
             />
             <div
