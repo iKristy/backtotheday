@@ -495,12 +495,8 @@
   font-style: normal;
   font-size: 1.5rem;
   line-height: 1;
-  
-  
-  
-  
   text-align: center;
-  padding: 0.5em 0.75em 0.75em 0.75em;
+  padding: 0.5em 0.75em 0.75em;
   background: linear-gradient(
     180deg,
     rgb(50 50 50) 0%,
