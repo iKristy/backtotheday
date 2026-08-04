@@ -490,16 +490,17 @@
 
 .tc-logo {
   margin: 0;
-  font-family: "Goldman", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-weight: 700;
-  font-size: 1.65rem;
+  font-family: "neuropol-x-light", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
   line-height: 1;
   
-  letter-spacing: 0.01em;
-  word-spacing: 0.3em;
-  text-transform: uppercase;
+  
+  
+  
   text-align: center;
-  padding: 0.5em 0.75em;
+  padding: 0.5em 0.75em 0.75em 0.75em;
   background: linear-gradient(
     180deg,
     rgb(50 50 50) 0%,
@@ -507,16 +508,17 @@
     rgb(22 22 22) 100%
   );
   color: rgb(32 32 32);
-  -webkit-text-stroke: 6px rgb(200 200 205);
+  -webkit-text-stroke: 5px rgb(200 200 205);
   paint-order: stroke fill;
-  border-radius: 10px;
+  border-radius: 8px;
   outline: 2px solid rgb(200 200 205);
-  outline-offset: -6px;
+  outline-offset: -5px;
 }
 
 @media (min-width: 640px) {
   .tc-logo {
     font-size: 2.45rem;
+    letter-spacing: -0.1em;
   }
 }
 

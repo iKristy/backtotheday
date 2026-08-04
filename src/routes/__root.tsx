@@ -90,8 +90,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#6B7176" },
     ],
     links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://use.typekit.net", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://p.typekit.net", crossOrigin: "anonymous" },
       {
         rel: "preload",
         href: "/fonts/Impact_Label-webfont.woff",
@@ -108,7 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap",
+        href: "https://use.typekit.net/kfs1wzg.css",
       },
       {
         rel: "stylesheet",
